@@ -1,5 +1,9 @@
-import React, { useState } from "react";
+import React, { ReactElement, useState } from "react";
 
+const drawElements = (elements: string[], handleClick: any): ReactElement[] => elements.
+  map((elemant: string) => <button onClick={() => handleClick(elemant)}>
+    {elemant}
+  </button>)
 const Calculator: React.FC = () => {
   const [input, setInput] = useState<string>("");
 
@@ -7,6 +11,7 @@ const Calculator: React.FC = () => {
   const handleClear = () => {
     setInput("");
   };
+
   const handleClick = (value: string) => {
     setInput((prevInput) => prevInput + value);
   };
@@ -21,12 +26,10 @@ const Calculator: React.FC = () => {
 
   return (
     <div style={{ padding: "20px", textAlign: "center" }}>
-      <h1>React Calculator</h1>
       <div>
         <input
           type="text"
           value={input}
-          readOnly
           style={{
             width: "200px",
             height: "30px",
@@ -36,28 +39,19 @@ const Calculator: React.FC = () => {
         />
       </div>
       <div style={{ marginTop: "10px" }}>
-        <button onClick={() => handleClick("1")}>1</button>
-        <button onClick={() => handleClick("2")}>2</button>
-        <button onClick={() => handleClick("3")}>3</button>
-        <button onClick={() => handleClick("+")}>+</button>
+        {drawElements(['1', '2', '3'], handleClick)}
       </div>
       <div style={{ marginTop: "10px" }}>
-        <button onClick={() => handleClick("4")}>4</button>
-        <button onClick={() => handleClick("5")}>5</button>
-        <button onClick={() => handleClick("6")}>6</button>
-        <button onClick={() => handleClick("-")}>-</button>
+      {drawElements(['4', '5', '6'], handleClick)}
+
       </div>
       <div style={{ marginTop: "10px" }}>
-        <button onClick={() => handleClick("7")}>7</button>
-        <button onClick={() => handleClick("8")}>8</button>
-        <button onClick={() => handleClick("9")}>9</button>
-        <button onClick={() => handleClick("*")}>*</button>
+      {drawElements(['7', '8', '9'], handleClick)}
       </div>
       <div style={{ marginTop: "10px" }}>
-        <button onClick={() => handleClick("0")}>0</button>
-        <button onClick={() => handleClick(".")}>.</button>
-        <button onClick={handleClear}>C</button>
-        <button onClick={() => handleClick("/")}>/</button>
+      {drawElements(['0', '+','-'], handleClick)}
+
+    
       </div>
       <div style={{ marginTop: "10px" }}>
         <button onClick={handleCalculate}>=</button>

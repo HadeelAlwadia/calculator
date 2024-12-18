@@ -1,12 +1,19 @@
 import React, { ReactElement, useState } from "react";
 
-const drawElements = (elements: string[], handleClick: any): ReactElement[] => elements.
-  map((elemant: string) => <button onClick={() => handleClick(elemant)}>
-    {elemant}
-  </button>)
+
+const drawElements = (elements: string[], handleClick: any): ReactElement =>
+  <section className="btns-graid"  style={{ marginTop: "10px" }}>
+    {elements.
+      map((elemant: string) => <button onClick={() => handleClick(elemant)}>
+        {elemant}
+      </button>)}
+  </section>
+
+
+
+
 const Calculator: React.FC = () => {
   const [input, setInput] = useState<string>("");
-
 
   const handleClear = () => {
     setInput("");
@@ -25,8 +32,8 @@ const Calculator: React.FC = () => {
   };
 
   return (
-    <div style={{ padding: "20px", textAlign: "center" }}>
-      <div>
+    <main>
+      <div >
         <input
           type="text"
           value={input}
@@ -38,25 +45,13 @@ const Calculator: React.FC = () => {
           }}
         />
       </div>
-      <div style={{ marginTop: "10px" }}>
-        {drawElements(['1', '2', '3'], handleClick)}
-      </div>
-      <div style={{ marginTop: "10px" }}>
-      {drawElements(['4', '5', '6'], handleClick)}
+      {drawElements(['1', '2', '3','4', '5', '6','7', '8', '9','0', '+', '-'],handleClick   )}
 
-      </div>
-      <div style={{ marginTop: "10px" }}>
-      {drawElements(['7', '8', '9'], handleClick)}
-      </div>
-      <div style={{ marginTop: "10px" }}>
-      {drawElements(['0', '+','-'], handleClick)}
 
-    
-      </div>
-      <div style={{ marginTop: "10px" }}>
-        <button onClick={handleCalculate}>=</button>
-      </div>
-    </div>
+
+       
+      <button  onClick={handleCalculate}>=</button>
+    </main>
   );
 };
 

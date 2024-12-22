@@ -41,7 +41,7 @@ const Calculator: React.FC = () => {
   return (
     <main>
       <section className="cacl-contineer" >
-        <input autoFocus value={input} className="entered-values" placeholder={`${haveErrorFormat ? ' Try Agian! ' : 'Start Calcolating!'}`} />
+        <input autoFocus value={input} className="entered-values" placeholder={`${haveErrorFormat ? ' Try Agian! ' : 'Start Calculating!'}`} />
         <mark className="equal-value" >{equalValue}</mark>
       </section>
       {drawElements(['1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '+', '-'], handleClick)}

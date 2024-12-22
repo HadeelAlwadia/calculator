@@ -1,17 +1,14 @@
 
-
-
-main{
-  width: 40%;
-  margin: auto;
-  height: 80vh;
-  background-color: gainsboro;
+body{
+  
+  margin: 0;
 }
 
-.btns-graid{
-  height: 80%;
-  width: 100%;
-  display: grid;
-  grid-template-columns: auto auto auto;
-  padding: 20px;
-}
+
+ button{
+  color: white;
+  margin: 2px ;
+  cursor: pointer;
+  border: none;
+  border-radius: 15px;
+ }

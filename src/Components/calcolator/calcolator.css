@@ -17,15 +17,19 @@ main{
     height: 15%;
     margin-top: 5%;
     justify-content: space-around;
+    align-items: center;
+
   }
   .equal-value{
-    background-color: aliceblue;
-   padding-top: 40px;
+    font-size: larger;
+    color: green;
+    background-color: inherit;
     text-align: center;
     width: 20%;
   }
 
 .btns-grid{
+      font-size: larger;
     height: 60%;
     width: 100%;
     display: grid;
@@ -49,14 +53,19 @@ main{
 
 
   .entered-values{
-    background-color: aliceblue;
-
+    background-color: inherit;
+    outline: none;
     border: none;
-
     font-weight:3000px;
     border: none;
     display: block;
     width: 50%;
-    height: 100%;
     font-size:large;
   }
+  
+  /* Mobile screen (screens smaller than 768px) */
+@media (max-width: 768px) {
+  main {
+    width: 95%; /* Adjust the width for smaller screens (e.g., mobile devices) */
+  }
+}

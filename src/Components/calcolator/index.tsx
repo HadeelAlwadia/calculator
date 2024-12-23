@@ -1,7 +1,8 @@
 import React, { ReactElement, useState } from "react";
 import './calcolator.css'
 
-const drawElements = (elements: string[], handleClick: any): ReactElement =>
+
+const drawElements = (elements: string[], handleClick: (element:string)=>void): ReactElement =>
   <section className="btns-grid">
     {elements.
       map((element: string) => <button onClick={() => handleClick(element)}
@@ -16,10 +17,6 @@ const Calculator: React.FC = () => {
   const [input, setInput] = useState<string>("");
   const [equalValue, setEqualValue] = useState<string>("0");
   const [haveErrorFormat, setHaveErrorFormat] = useState<boolean>(false);
-
-
-
-
 
   const handleClick = (value: string) => {
     setInput((prevInput) => prevInput + value);
@@ -41,7 +38,7 @@ const Calculator: React.FC = () => {
   return (
     <main>
       <section className="cacl-contineer" >
-        <input autoFocus value={input} className="entered-values" placeholder={`${haveErrorFormat ? ' Try Agian! ' : 'Start Calculating!'}`} />
+        <input autoFocus value={input} className="entered-values" placeholder={`${haveErrorFormat ? 'Error Syntax ! Try Agian ' : 'Start Calculating!'}`} />
         <mark className="equal-value" >{equalValue}</mark>
       </section>
       {drawElements(['1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '+', '-'], handleClick)}

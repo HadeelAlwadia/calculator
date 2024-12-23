@@ -1,4 +1,4 @@
-# Advanced Calculator App
+#  Calculator App
 ![calculator logo](public/calculator.png)
 
 A calculator web application that offers   basic arithmetic operations . Built using modern web technologies (HTML, CSS, JavaScript), this app is responsive and easy to use on any device.

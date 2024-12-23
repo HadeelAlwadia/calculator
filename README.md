@@ -1,5 +1,5 @@
 # Advanced Calculator App
-![calculator logo](https://ibb.co/3ydCLkb)
+![calculator logo]('')
 
 A calculator web application that offers   basic arithmetic operations . Built using modern web technologies (HTML, CSS, JavaScript), this app is responsive and easy to use on any device.
 

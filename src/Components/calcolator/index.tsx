@@ -30,15 +30,14 @@ const Calculator: React.FC = () => {
       setInput('')
       setHaveErrorFormat(true)
       setEqualValue('0')
-
-
     }
   };
 
   return (
     <main>
       <section className="cacl-contineer" >
-        <input autoFocus value={input} className="entered-values" placeholder={`${haveErrorFormat ? 'Error Syntax ! Try Agian ' : 'Start Calculating!'}`} />
+        <input autoFocus value={input} className="entered-values"
+         placeholder={`${haveErrorFormat ? 'Error Syntax ! Try Agian ' : 'Start Calculating!'}`} />
         <mark className="equal-value" >{equalValue}</mark>
       </section>
       {drawElements(['1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '+', '-'], handleClick)}
